@@ -8,12 +8,12 @@
 
     <changeSet id="04" author="Chhavi">
         <comment>Inserting  Location and User </comment>
-        <insert tableName="location-user-mapping">
+        <insert tableName="location_user_mapping">
             <column name="id" valueNumeric="1"/>
             <column name="location_id" valueNumeric="1"/>
             <column name="user_id" valueNumeric="1"/>
         </insert>
-        <insert tableName="location-user-mapping">
+        <insert tableName="location_user_mapping">
             <column name="id" valueNumeric="2"/>
             <column name="location_id" valueNumeric="1"/>
             <column name="user_id" valueNumeric="2"/>

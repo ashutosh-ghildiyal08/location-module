@@ -1,22 +1,17 @@
 package com.location.LocationModule.entity;
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.nio.MappedByteBuffer;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
-
-@Table(name = "location-user-mapping")
+@Table(name = "location_user_mapping")
 public class UserLocationMapping {
     @Id
     @Column(name = "id", nullable = false, unique = true)
