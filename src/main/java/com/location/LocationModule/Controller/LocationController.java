@@ -1,6 +1,7 @@
 package com.location.LocationModule.Controller;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.location.LocationModule.Request.AddLocationRequest;
 import com.location.LocationModule.Request.UpdateLocationRequest;
 import com.location.LocationModule.Service.LocationService;
@@ -19,6 +20,9 @@ public class LocationController {
 
     @Autowired
     UserLocationService userLocationService;
+
+
+
     @GetMapping("/location")
     public List<Location> getAllLocation() {
         return locationService.getAllLocation();
@@ -37,10 +41,10 @@ public class LocationController {
 
 
     @DeleteMapping("/location/{locationId}")
-    public Location deleteLocation(@PathVariable int locationId)
+    public String deleteLocation(@PathVariable int locationId)
     {
-        return locationService.deleteLocationById(locationId);
-
+        locationService.deleteLocationById(locationId);
+        return "Location Deleted";
     }
 
     @PutMapping("/location")

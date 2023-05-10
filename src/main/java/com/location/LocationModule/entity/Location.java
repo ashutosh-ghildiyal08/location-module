@@ -19,13 +19,21 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "loc_name", nullable = false, unique = true)
+    @Column(name = "loc_name", nullable = false)
     private String loc_name;
 
-    @Column(name = "loc_code", nullable = false, unique = true)
+    @Column(name = "loc_code", nullable = false)
     private String loc_code;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    @ManyToMany(cascade =
+            {
+//                    CascadeType.DETACH,
+//                    CascadeType.MERGE,
+//                    CascadeType.REFRESH,
+                    CascadeType.PERSIST
+            },
+            fetch= FetchType.EAGER)
+
     @JoinTable(name = "location_user_mapping",
             joinColumns = @JoinColumn(name = "location_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))

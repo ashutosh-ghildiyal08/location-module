@@ -19,11 +19,8 @@ public class UserService {
     ObjectTranslator objectTranslator;
 
     @Autowired
-    static
     UserRepository userRepository;
 
-    @Autowired
-    LocationRepository locationRepository;
     public List<User> getAllUser()
     {
         List<User> user = new ArrayList<User>(userRepository.findAll());
@@ -40,7 +37,12 @@ public class UserService {
     }
 
 
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 
-
+    public void addUsers(List<User> userList) {
+        userRepository.saveAll(userList);
+    }
 }
 

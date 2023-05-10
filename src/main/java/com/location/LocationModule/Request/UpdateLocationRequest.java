@@ -13,5 +13,5 @@ import lombok.ToString;
 public class UpdateLocationRequest {
     private int id;
     private String loc_name;
-    private int loc_code;
+    private String loc_code;
 }

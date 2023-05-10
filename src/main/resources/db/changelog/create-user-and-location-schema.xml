@@ -9,14 +9,12 @@
   <changeSet id="01" author="Chhavi">
     <createTable tableName="users"
       remarks="A table to contain all user information">
-      <column name="id" type="int" autoIncrement="true">
+      <column name="id" type="int" >
         <constraints nullable="false" unique="true" primaryKey="true"/>
       </column>
-      <column name="username" type="varchar(20)">
+      <column name="email" type="varchar(20)">
         <constraints nullable="false" unique="true"/>
       </column>
-
-
     </createTable>
 
     <createTable tableName="location"

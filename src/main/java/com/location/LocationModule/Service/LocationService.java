@@ -33,13 +33,15 @@ public class LocationService {
     }
     public void updateLocation(UpdateLocationRequest updateLocationRequest)
     {
-        Location location = objectTranslator.translate(updateLocationRequest,Location.class);
+        Location location = new Location();
+        location.setId(updateLocationRequest.getId());
+        location.setLoc_name(updateLocationRequest.getLoc_name());
+        location.setLoc_code(updateLocationRequest.getLoc_code());
         locationRepository.save(location);
     }
 
-    public Location deleteLocationById(int id) {
+    public void deleteLocationById(int id) {
         locationRepository.deleteById(id);
-        return null;
     }
 
 

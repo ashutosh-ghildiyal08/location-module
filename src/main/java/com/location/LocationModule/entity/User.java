@@ -15,11 +15,14 @@ import java.util.Set;
 public class User {
     @Id
     @Column(name = "id", nullable = false, unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "username", nullable = false, unique = true)
-    private String username;
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+    @Override
+    public String toString() {
+        return "[" + id + " " + email + "]";
+    }
 
 }
 
